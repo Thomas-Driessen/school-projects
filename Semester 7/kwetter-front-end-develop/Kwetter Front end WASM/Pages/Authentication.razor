@@ -1,0 +1,22 @@
+﻿@page "/authentication/{action}"
+@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+@using Kwetter_Front_end_WASM.Shared.Interfaces
+@inject IUserService _userService
+
+<RemoteAuthenticatorView Action="@Action" OnLogInSucceeded="OnLoginSucceeded">
+    <LoggingIn>
+        You are about to be redirected to https://keycloack.suchamazing.services.
+    </LoggingIn>
+</RemoteAuthenticatorView>
+
+@code{
+
+    [Parameter]
+    public string? Action { get; set; }
+
+    public async void OnLoginSucceeded()
+    {
+        await _userService.CreateUser(null);
+    }
+    
+}

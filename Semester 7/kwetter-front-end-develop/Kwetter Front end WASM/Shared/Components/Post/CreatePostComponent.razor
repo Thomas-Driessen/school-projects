@@ -1,0 +1,33 @@
+@using Kwetter_Front_end_WASM.Shared.Models
+@using Kwetter_Front_end_WASM.Shared.Interfaces
+
+@inject IPostService _postService
+
+<div class="container">
+    <EditForm Model="@newPost" OnValidSubmit="@CreatePost">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+    
+        <InputText id="tweetTitleInput" @bind-Value="newPost.Title" />
+        <InputText id="tweetContentInput" @bind-Value="newPost.Content" />
+        <InputFile OnChange="@OnInputFileChange" multiple/>
+
+        <button type="submit">Submit</button>
+    </EditForm>
+</div>
+
+
+@code {
+    private Post newPost = new();
+    private IBrowserFile uploadedMedia;
+    
+    private void OnInputFileChange(InputFileChangeEventArgs e)
+    {
+        uploadedMedia = e.File;
+    }
+
+    private async Task CreatePost()
+    {
+        await _postService.CreatePost(newPost, uploadedMedia);
+    }
+}

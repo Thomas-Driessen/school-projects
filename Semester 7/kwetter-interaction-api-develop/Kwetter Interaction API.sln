@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kwetter Interaction API", "Kwetter Interaction API\Kwetter Interaction API.csproj", "{DA23FC69-B74E-4082-9C9D-856CBA2098E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kwetter Interaction API.Core", "Kwetter Interaction API.Core\Kwetter Interaction API.Core.csproj", "{8630752B-3B2D-4917-B644-1D086B9EE4CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kwetter Interaction API.Dal", "Kwetter Interaction API.Dal\Kwetter Interaction API.Dal.csproj", "{866427A7-9023-4629-98AD-C2EBFFAC68A7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA23FC69-B74E-4082-9C9D-856CBA2098E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA23FC69-B74E-4082-9C9D-856CBA2098E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA23FC69-B74E-4082-9C9D-856CBA2098E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA23FC69-B74E-4082-9C9D-856CBA2098E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8630752B-3B2D-4917-B644-1D086B9EE4CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8630752B-3B2D-4917-B644-1D086B9EE4CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8630752B-3B2D-4917-B644-1D086B9EE4CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8630752B-3B2D-4917-B644-1D086B9EE4CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{866427A7-9023-4629-98AD-C2EBFFAC68A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{866427A7-9023-4629-98AD-C2EBFFAC68A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{866427A7-9023-4629-98AD-C2EBFFAC68A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{866427A7-9023-4629-98AD-C2EBFFAC68A7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

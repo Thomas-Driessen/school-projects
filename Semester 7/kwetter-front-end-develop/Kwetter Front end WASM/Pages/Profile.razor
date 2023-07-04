@@ -1,0 +1,38 @@
+@page "/profile/{UserId:guid}"
+@using Kwetter_Front_end_WASM.Shared.Models
+@using Kwetter_Front_end_WASM.Shared.Interfaces
+
+@inject IUserService _userService
+@inject IPostService _postService
+
+<h3>Profile</h3>
+@if (user == null)
+{
+    <h3>No user found...</h3>
+}
+else
+{
+    <h3>naam: @user.Username</h3>
+    <button class="btn btn-primary" @onclick="FollowUser">Follow</button>
+    <Feed posts="@posts" embedded=true></Feed>
+}
+
+@code {
+    [Parameter]
+    public Guid UserId { get; set; }
+
+    private User user { get; set; }
+
+    private List<Post> posts { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        user = await _userService.GetUser(UserId);
+        posts = await _postService.GetTweetsFromUser(user.Id);
+    }
+
+    private async Task FollowUser()
+    {
+        await _userService.CreateFollowUser(user);
+    }
+}

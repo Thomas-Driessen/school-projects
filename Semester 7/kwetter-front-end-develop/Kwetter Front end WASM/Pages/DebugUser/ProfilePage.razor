@@ -1,0 +1,94 @@
+@page "/profilepage"
+@attribute [Authorize]
+
+@using System.Security.Claims
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject HttpClient Http
+@inject IAccessTokenProvider TokenProvider
+
+<h3>ClaimsPrincipal Data</h3>
+
+<button @onclick="GetClaimsPrincipalData">Get ClaimsPrincipal Data</button>
+<button @onclick="ApiTest">Api test</button>
+
+<p>@_authMessage</p>
+
+<p>Claims</p>
+
+@if (_claims.Count() > 0)
+{
+    <ul>
+        @foreach (var claim in _claims)
+        {
+            <li>@claim.Type &ndash; @claim.Value</li>
+        }
+    </ul>
+}
+
+<p>api test:</p>
+<p>@api_result</p>
+<p>@tokenAccess</p>
+
+<p>role test: @role_test.ToString()</p>
+
+<AuthorizeView Roles="Admin">
+    <p>You can only see this if you're an admin or superuser.</p>
+</AuthorizeView>
+
+
+@code {
+    private string api_result = "nog niets...";
+    private bool role_test;
+    private string tokenAccess;
+    private string _authMessage;
+    private string _surnameMessage;
+    private ClaimsPrincipal _user;
+    private IEnumerable<Claim> _claims = Enumerable.Empty<Claim>();
+    private IEnumerable<ClaimsIdentity> _identities = Enumerable.Empty<ClaimsIdentity>();
+
+    private async Task GetClaimsPrincipalData()
+    {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+        
+        var accessTokenResult = await TokenProvider.RequestAccessToken();
+
+        if (accessTokenResult.TryGetToken(out var token))
+        {
+            tokenAccess = token.Value;
+        }
+
+        if (user.Identity.IsAuthenticated)
+        {
+            _authMessage = $"{user.Identity.Name} is authenticated.";
+            //_claims = user.Claims;
+            _identities = user.Identities;
+            _user = user;
+            role_test = user.IsInRole("Admin");
+            _surnameMessage = $"Surname: {user.FindFirst(c => c.Type == ClaimTypes.Surname)?.Value}";
+            
+            var identity = (ClaimsIdentity)user.Identity;
+            _claims = user.FindAll(identity.RoleClaimType);
+            
+        }
+        else
+        {
+            _authMessage = "The user is NOT authenticated.";
+        }
+    }
+
+    private async Task ApiTest()
+    {
+        try
+        {
+            api_result =  await Http.GetFromJsonAsync<string>("user/auth");
+
+        }
+        catch (AccessTokenNotAvailableException exception)
+        {
+            exception.Redirect();
+        }
+    }
+}

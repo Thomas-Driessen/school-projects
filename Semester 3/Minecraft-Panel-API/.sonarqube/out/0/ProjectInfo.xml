@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonarsource.com/msbuild/integration/2015/1">
+  <ProjectName>minecraft-panel-api.Players.DAL</ProjectName>
+  <ProjectLanguage>C#</ProjectLanguage>
+  <ProjectType>Product</ProjectType>
+  <ProjectGuid>a634f043-9e4f-4306-b870-1e9603fca4a9</ProjectGuid>
+  <FullPath>/home/thomas/stack/School/Semester 3/Individueel project/minecraft-panel-api/minecraft-panel-api.Players.DAL/minecraft-panel-api.Players.DAL.csproj</FullPath>
+  <IsExcluded>false</IsExcluded>
+  <AnalysisResults>
+    <AnalysisResult Id="FilesToAnalyze" Location="/home/thomas/stack/School/Semester 3/Individueel project/minecraft-panel-api/.sonarqube/out/0/FilesToAnalyze.txt" />
+  </AnalysisResults>
+  <AnalysisSettings>
+    <Property Name="sonar.cs.roslyn.reportFilePath">/home/thomas/stack/School/Semester 3/Individueel project/minecraft-panel-api/minecraft-panel-api.Players.DAL/bin/Debug/netcoreapp3.1/minecraft-panel-api.Players.DAL.dll.RoslynCA.json|/home/thomas/stack/School/Semester 3/Individueel project/minecraft-panel-api/minecraft-panel-api.Players.DAL/bin/Debug/netcoreapp3.1/minecraft-panel-api.Players.DAL.dll.RoslynCA.json</Property>
+    <Property Name="sonar.cs.analyzer.projectOutPath">/home/thomas/stack/School/Semester 3/Individueel project/minecraft-panel-api/.sonarqube/out/0</Property>
+  </AnalysisSettings>
+  <Configuration>Debug</Configuration>
+  <Platform>AnyCPU</Platform>
+  <TargetFramework>netcoreapp3.1</TargetFramework>
+</ProjectInfo>

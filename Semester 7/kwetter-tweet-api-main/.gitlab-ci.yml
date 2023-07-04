@@ -1,0 +1,53 @@
+image: mcr.microsoft.com/dotnet/sdk:6.0
+
+stages:          # List of stages for jobs, and their order of execution
+  - build
+  - vulnerabilities
+  - sonarqube
+  - docker
+
+build-job:       # This job runs in the build stage, which runs first.
+  stage: build
+  script:
+    - dotnet restore
+    - dotnet build
+
+packages-check:
+  stage: vulnerabilities
+  script:
+    - dotnet restore
+    - "dotnet list package --vulnerable --include-transitive 2>&1 | tee build.log grep -q -i \"critical\\|high\\|moderate\\|low\" build log; [ $? -eq 0 ] && echo \"Security Vulnerabilities found on the log output\""
+  allow_failure: true
+
+sonarqube-check:
+  stage: sonarqube
+  image: mcr.microsoft.com/dotnet/sdk:6.0
+  variables:
+    SONAR_USER_HOME: "${CI_PROJECT_DIR}/.sonar"  # Defines the location of the analysis task cache
+    GIT_DEPTH: "0"  # Tells git to fetch all the branches of the project, required by the analysis task
+  cache:
+    key: "${CI_JOB_NAME}"
+    paths:
+      - .sonar/cache
+  script: 
+      - "apt-get update"
+      - "apt-get install --yes openjdk-11-jre"
+      - "export PATH=\"$PATH:$HOME/.dotnet/tools\""
+      - "dotnet tool install --global dotnet-sonarscanner"
+      - "dotnet tool install --global dotnet-coverage"
+      - "dotnet sonarscanner begin /k:\"kwetter_kwetter-tweet-api_AYUalQ20MqI_hGSDEDkw\" /d:sonar.login=\"$SONAR_TOKEN\" /d:\"sonar.host.url=$SONAR_HOST_URL\" /d:sonar.cs.vscoveragexml.reportsPaths=coverage.xml"
+      - "dotnet build --no-incremental"
+      - "dotnet-coverage collect 'dotnet test' -f xml -o 'coverage.xml'"
+      - "dotnet sonarscanner end /d:sonar.login=\"$SONAR_TOKEN\""
+  allow_failure: true
+
+docker-push-to-hub:
+  image: docker:20.10.16
+  stage: docker
+  services:
+      - docker:20.10.16-dind
+  before_script:
+      - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+  script:
+      - docker build . -t $DOCKER_IMAGE
+      - docker push $DOCKER_IMAGE

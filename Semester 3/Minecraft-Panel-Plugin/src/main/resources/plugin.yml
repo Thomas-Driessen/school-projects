@@ -1,0 +1,6 @@
+name: MinecraftPanelPlugin
+version: 1.0
+main: nl.thomas.minecraftpanelplugin.MinecraftPanelPlugin
+api-version: 1.16
+author: Thomas
+description: A plugin with REST capabilities to expose data from the Spigot/Bukkit API to outside the server.

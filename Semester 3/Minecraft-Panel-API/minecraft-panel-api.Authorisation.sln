@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "minecraft-panel-api.Authorisation", "minecraft-panel-api.Authorisation\minecraft-panel-api.Authorisation.csproj", "{2D11822A-885F-46A8-AE5E-CC05B11B085F}"
+EndProject
+Project("{FAE04EC0-301F-11D00C04F79EFBC3-BF4B-}") = "minecraft-panel-api.Authorisation.DAL", "minecraft-panel-api.Authorisation.DAL\minecraft-panel-api.Authorisation.DAL.csproj", "{B93D3036-B25E-4063-8B53-D0091A5D7476}"
+EndProject
+
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

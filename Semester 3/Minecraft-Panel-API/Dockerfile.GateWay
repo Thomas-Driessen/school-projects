@@ -1,0 +1,21 @@
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build-env
+WORKDIR /app
+
+# Copy csproj and restore as distinct layers
+COPY minecraft-panel-api.GateWay.sln ./
+COPY minecraft-panel-api.GateWay/*.csproj ./minecraft-panel-api.GateWay/
+
+RUN dotnet restore minecraft-panel-api.GateWay
+
+# Copy everything else and build
+COPY minecraft-panel-api.GateWay/. ./minecraft-panel-api.GateWay/
+
+RUN dotnet publish -c Release -o out minecraft-panel-api.GateWay
+
+# Build runtime image
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1
+EXPOSE 5000 5001 $PORT
+
+WORKDIR /app
+COPY --from=build-env /app/out .
+CMD ASPNETCORE_URLS=http://*:$PORT dotnet minecraft-panel-api.GateWay.dll

@@ -1,0 +1,69 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "minecraft-panel-api.Authorisation", "minecraft-panel-api.Authorisation\minecraft-panel-api.Authorisation.csproj", "{2D11822A-885F-46A8-AE5E-CC05B11B085F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "minecraft-panel-api.Authorisation.DAL", "minecraft-panel-api.Authorisation.DAL\minecraft-panel-api.Authorisation.DAL.csproj", "{B93D3036-B25E-4063-8B53-D0091A5D7476}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "minecraft-panel-api-microservices", "minecraft-panel-api-microservices", "{8F695600-0BAE-4141-89A4-0E4D5B5E5D4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "minecraft-panel-api.Interaction", "minecraft-panel-api.Interaction\minecraft-panel-api.Interaction.csproj", "{B0F26154-B080-4C4D-9CFA-8034B2C57AEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "minecraft-panel-api.GateWay", "minecraft-panel-api.GateWay\minecraft-panel-api.GateWay.csproj", "{F4B46DF4-5BAB-4C9D-8D97-DCE0E0D3F6F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "minecraft-panel-api.Authorisation.Tests", "minecraft-panel-api.Authorisation.Tests\minecraft-panel-api.Authorisation.Tests.csproj", "{2D26F35D-04AB-4A5F-9533-31FE6EC5E521}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "minecraft-panel-api.Interaction.DAL", "minecraft-panel-api.Interaction.DAL\minecraft-panel-api.Interaction.DAL.csproj", "{A634F043-9E4F-4306-B870-1E9603FCA4A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "minecraft-panel-api.Interaction.Tests", "minecraft-panel-api.Interaction.Tests\minecraft-panel-api.Interaction.Tests.csproj", "{D7B55396-4678-478B-8079-58F42FF62F6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "minecraft-panel-api.GateWay.Tests", "minecraft-panel-api.GateWay.Tests\minecraft-panel-api.GateWay.Tests.csproj", "{CCFAFEA6-A2FE-4853-A311-67A1CC4EDDBF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "minecraft-panel-api.Tests", "minecraft-panel-api.Tests", "{F635F198-3FA1-4102-8ED6-87F2BAAB6DE4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2D11822A-885F-46A8-AE5E-CC05B11B085F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D11822A-885F-46A8-AE5E-CC05B11B085F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D11822A-885F-46A8-AE5E-CC05B11B085F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D11822A-885F-46A8-AE5E-CC05B11B085F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B93D3036-B25E-4063-8B53-D0091A5D7476}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B93D3036-B25E-4063-8B53-D0091A5D7476}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B93D3036-B25E-4063-8B53-D0091A5D7476}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B93D3036-B25E-4063-8B53-D0091A5D7476}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0F26154-B080-4C4D-9CFA-8034B2C57AEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0F26154-B080-4C4D-9CFA-8034B2C57AEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0F26154-B080-4C4D-9CFA-8034B2C57AEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0F26154-B080-4C4D-9CFA-8034B2C57AEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4B46DF4-5BAB-4C9D-8D97-DCE0E0D3F6F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4B46DF4-5BAB-4C9D-8D97-DCE0E0D3F6F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4B46DF4-5BAB-4C9D-8D97-DCE0E0D3F6F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4B46DF4-5BAB-4C9D-8D97-DCE0E0D3F6F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D26F35D-04AB-4A5F-9533-31FE6EC5E521}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D26F35D-04AB-4A5F-9533-31FE6EC5E521}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D26F35D-04AB-4A5F-9533-31FE6EC5E521}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D26F35D-04AB-4A5F-9533-31FE6EC5E521}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A634F043-9E4F-4306-B870-1E9603FCA4A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A634F043-9E4F-4306-B870-1E9603FCA4A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A634F043-9E4F-4306-B870-1E9603FCA4A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A634F043-9E4F-4306-B870-1E9603FCA4A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7B55396-4678-478B-8079-58F42FF62F6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7B55396-4678-478B-8079-58F42FF62F6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7B55396-4678-478B-8079-58F42FF62F6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7B55396-4678-478B-8079-58F42FF62F6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCFAFEA6-A2FE-4853-A311-67A1CC4EDDBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCFAFEA6-A2FE-4853-A311-67A1CC4EDDBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCFAFEA6-A2FE-4853-A311-67A1CC4EDDBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCFAFEA6-A2FE-4853-A311-67A1CC4EDDBF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B0F26154-B080-4C4D-9CFA-8034B2C57AEF} = {8F695600-0BAE-4141-89A4-0E4D5B5E5D4C}
+		{A634F043-9E4F-4306-B870-1E9603FCA4A9} = {8F695600-0BAE-4141-89A4-0E4D5B5E5D4C}
+		{2D26F35D-04AB-4A5F-9533-31FE6EC5E521} = {F635F198-3FA1-4102-8ED6-87F2BAAB6DE4}
+		{CCFAFEA6-A2FE-4853-A311-67A1CC4EDDBF} = {F635F198-3FA1-4102-8ED6-87F2BAAB6DE4}
+		{D7B55396-4678-478B-8079-58F42FF62F6A} = {F635F198-3FA1-4102-8ED6-87F2BAAB6DE4}
+	EndGlobalSection
+EndGlobal

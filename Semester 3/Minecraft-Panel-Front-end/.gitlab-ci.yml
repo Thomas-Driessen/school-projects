@@ -1,0 +1,103 @@
+stages:
+  - build
+  - lint
+  - test
+  - deploy
+
+variables:
+  project: "minecraft-panel-frontend"
+  npm_config_cache: "$CI_PROJECT_DIR/.npm"
+  CYPRESS_CACHE_FOLDER: "$CI_PROJECT_DIR/cache/Cypress"
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - .npm
+    - cache/Cypress
+    - node_modules
+
+build:
+  stage: build
+  before_script:
+    - apk add nodejs npm
+    - "npm install @vue/cli-service"  
+    - "npm install"
+  cache:
+    paths:
+      - node_modules/  
+  script:
+    - "npx vue-cli-service build"
+  #artifacts:
+  #  untracked: true
+
+lint:
+  stage: lint
+  dependencies: 
+    - build
+  allow_failure: true
+  script:
+    - apk add nodejs npm
+    - "npx vue-cli-service lint"
+
+test:
+  stage: test
+  dependencies: 
+    - build
+  allow_failure: true
+  script:
+    - apk add nodejs npm
+    - "npx vue-cli-service test:unit"
+
+cypress:
+  #stage: test
+  #image: cypress/browsers
+  dependencies: 
+    - build
+  allow_failure: true
+  before_script:
+    - npm install
+    #- npm install -g serve
+    - npm ci
+    # show where the Cypress test runner binaries are cached
+    - $(npm bin)/cypress cache path
+    # show all installed versions of Cypress binary
+    - $(npm bin)/cypress cache list
+    - $(npm bin)/cypress verify
+  script:
+    - npm run cytest
+    - $(npm bin)/cypress run
+  artifacts:
+    expire_in: 1 week
+    when: always
+    paths:
+    - cypress/screenshots
+    - cypress/videos
+    reports:
+      junit:
+        - results/TEST-*.xml
+
+deploy:
+  stage: deploy
+  image: docker:19.03.12
+  variables:
+    DOCKER_TLS_CERTDIR: "/certs"
+  services:
+    - docker:19.03.12-dind
+  dependencies: 
+    - build
+  before_script:
+    - apk add curl nodejs npm
+    - npm install -g heroku
+  script:
+    - touch ~/.netrc
+    - echo "machine api.heroku.com" >> ~/.netrc
+    - echo "  login $HEROKU_EMAIL" >> ~/.netrc
+    - echo "  password $HEROKU_API_KEY" >> ~/.netrc
+    - echo "machine git.heroku.com" >> ~/.netrc
+    - echo "  login $HEROKU_EMAIL" >> ~/.netrc
+    - echo "  password $HEROKU_API_KEY" >> ~/.netrc
+    - heroku container:login
+    - heroku container:push web --app=$HEROKU_APP_STAGING
+    - heroku container:release web --app=$HEROKU_APP_STAGING
+    - heroku container:logout
+    - rm ~/.netrc

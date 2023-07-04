@@ -1,0 +1,20 @@
+{
+  "SerializedFilePath": "/home/thomas/Documents/Projecten/school-projects/Semester 3/Minecraft-Panel-API/minecraft-panel-api.Interaction/obj/Debug/netcoreapp3.1/project.razor.json",
+  "FilePath": "/home/thomas/Documents/Projecten/school-projects/Semester 3/Minecraft-Panel-API/minecraft-panel-api.Interaction/minecraft-panel-api.Interaction.csproj",
+  "Configuration": {
+    "ConfigurationName": "MVC-3.0",
+    "LanguageVersion": "3.0",
+    "Extensions": [
+      {
+        "ExtensionName": "MVC-3.0"
+      }
+    ]
+  },
+  "ProjectWorkspaceState": {
+    "TagHelpers": [],
+    "CSharpLanguageVersion": 800
+  },
+  "RootNamespace": "minecraft_panel_api.Interaction",
+  "Documents": [],
+  "SerializationFormat": "0.3"
+}

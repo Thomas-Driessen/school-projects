@@ -1,0 +1,14 @@
+.player {
+    width: 10%;
+    height: 10%;
+    border-style: solid;
+    text-align: center;
+}
+
+.profileOverview{
+    margin-bottom: 2%;
+}
+
+.passwordResetCollapse{
+    margin-bottom: 2%;
+}

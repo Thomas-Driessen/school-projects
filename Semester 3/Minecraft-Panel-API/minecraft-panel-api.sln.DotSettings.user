@@ -1,0 +1,12 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/Highlighting/HighlightingSourceSnapshotLocation/@EntryValue">/home/thomas/.cache/JetBrains/Rider2020.3/resharper-host/temp/Rider/vAny/CoverageData/_minecraft-panel-api.836393238/Snapshot/snapshot.utdcvr</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=30a9e972_002Dccbb_002D47a3_002D8487_002De32cb76d6c39/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="All tests from Solution" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;Solution /&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=71abb321_002D18be_002D4d88_002Dae4b_002D87a06c4b227f/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="TestGetPluginsViaEndpoint2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;Solution /&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=81301c4f_002D7d87_002D46b0_002Dbaa3_002D194b719e5a42/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="ForecastShoutReturnOkFast" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;Solution /&gt;
+&lt;/SessionState&gt;</s:String>
+	</wpf:ResourceDictionary>

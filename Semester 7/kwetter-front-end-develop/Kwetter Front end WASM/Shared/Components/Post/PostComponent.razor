@@ -1,0 +1,43 @@
+@using Kwetter_Front_end_WASM.Shared.Interfaces;
+@using Kwetter_Front_end_WASM.Shared.Models
+@using System.Web
+
+@inject NavigationManager Navigation
+@inject IRetweetService _retweetService
+
+<div class="tweetCard card">
+    <div class="card-header">
+        <img src="..." class="card-img-top" alt="Profile picture">
+        <a class="postUser" @onclick="() => GoToUser(post)">@post.Username</a>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">@post.Title</h5>
+        <p class="card-text">@post.Content</p>
+        <a class="card-link" @onclick="() => Retweet(post)">Retweet</a>
+        <a class="card-link" @onclick="() => Comment(post)">Comment</a>
+    </div>
+    <div class="card-footer">
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public Post post { get; set; }
+
+    public async Task<bool> Retweet(Post post)
+    {
+        await _retweetService.CreateRetweet(post);
+        return true;
+    }
+
+    public async Task<bool> Comment(Post post)
+    {
+
+        return false;
+    }
+    
+    public void GoToUser(Post post)
+    {
+        Navigation.NavigateTo($"profile/{post.UserId}");
+    }
+}

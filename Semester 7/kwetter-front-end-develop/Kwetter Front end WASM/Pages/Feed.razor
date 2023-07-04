@@ -1,0 +1,55 @@
+@page "/feed"
+@using Kwetter_Front_end_WASM.Shared.Models
+@using Kwetter_Front_end_WASM.Shared.Interfaces
+@using Kwetter_Front_end_WASM.Shared.Components.Post
+
+@inject IPostService _postService
+
+<PageTitle>Feed</PageTitle>
+
+<div class="container">
+    @if (!embedded)
+    {
+        <CreatePostComponent></CreatePostComponent>
+    }
+
+    @if (posts == null)
+    {
+        <h3>No posts found...</h3>
+    }
+    else
+    {
+        @foreach (Post post in posts)
+        {
+            <div class="container">
+                <div class="row justify-content-md-center">
+                    <PostComponent post="@post"></PostComponent>
+                </div>
+            </div>
+        }
+    }
+</div>
+
+@code {
+    [Parameter]
+    public List<Post> posts { get; set; }
+
+    [Parameter]
+    public bool embedded { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (!embedded)
+            posts = await GetPosts();
+    }
+
+    private async Task<List<Post>> GetPosts() 
+    {
+        return await _postService.GetPosts();
+    }
+    
+    private async Task<List<Post>> CreatePost() 
+    {
+        return await _postService.GetPosts();
+    }
+}

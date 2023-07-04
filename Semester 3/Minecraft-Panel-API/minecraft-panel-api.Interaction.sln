@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "minecraft-panel-api.Interaction", "minecraft-panel-api.Interaction\minecraft-panel-api.Interaction.csproj", "{B0F26154-B080-4C4D-9CFA-8034B2C57AEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "minecraft-panel-api.Interaction.DAL", "minecraft-panel-api.Interaction.DAL\minecraft-panel-api.Interaction.DAL.csproj", "{A634F043-9E4F-4306-B870-1E9603FCA4A9}"
+EndProject
+
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
