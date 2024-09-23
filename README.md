@@ -12,7 +12,7 @@ Therefore the code is 'as is' where no maintenance, help, warranty or guarantees
 
 ## Explanation
 ### **Semester 3**
-Semester 3 was aimed towards being introduced to the concept of microservices. The project I chose to make was a dashboard that retrieved information from a Minceraft server. This included the health and position of players. But also included rich user experiences with live updates if a player enters or leaves the server.
+Semester 3 was aimed towards being introduced to the concept of microservices. The project I chose to make was a dashboard that retrieved information from a Minecraft server. This included the health and position of players. But also included rich user experiences with live updates if a player enters or leaves the server.
 
 The stack that was used during Semester 3 is:
 - Vue.js
